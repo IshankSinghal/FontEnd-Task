@@ -8,7 +8,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Leaderboard />} />
-        {/* You can add more routes here */}
       </Routes>
     </Router>
   );

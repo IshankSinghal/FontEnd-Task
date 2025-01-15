@@ -11,7 +11,6 @@ function Leaderboard() {
     topTraders: [],
     keyMetrics: {},
     leaderboard: [],
-    segregatedData: {},
   });
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(null);
@@ -39,11 +38,15 @@ function Leaderboard() {
   }, []);
 
   const filterTraders = () => {
+    // Filter traders based on the selected filter
     const allTraders =
       selectedFilter === "All"
         ? leaderboardData.leaderboard
-        : leaderboardData.segregatedData[selectedFilter] || [];
+        : leaderboardData.leaderboard.filter(
+            (trader) => trader.Trophies === selectedFilter
+          );
 
+    // Apply search filter
     if (searchQuery) {
       return allTraders.filter((trader) =>
         trader.Name.toLowerCase().includes(searchQuery.toLowerCase())
