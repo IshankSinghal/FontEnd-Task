@@ -1,4 +1,4 @@
-# Front-End Task
+# LeaderBoard
 
 **Live Demo:** [Check it out!](https://front-end-assignment-blond.vercel.app/)
 
